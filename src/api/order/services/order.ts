@@ -120,6 +120,7 @@ export default factories.createCoreService(
             ],
           },
         };
+        
 
         let existingOrder = await strapi.db.query("api::order.order").findOne({
           where: { orderId: thrivecart.order_id },
