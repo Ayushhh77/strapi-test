@@ -20,8 +20,7 @@ export default {
       path: "/orders/thrivecart-webhook",
       handler: "order.handleThriveCartWebhook",
       config: {
-        auth: false,
-        policies: [],
+        policies: [], // Add authentication if needed
       },
     },
     {
@@ -29,7 +28,7 @@ export default {
       path: "/orders/update/:orderId",
       handler: "order.updateOrderDetails",
       config: {
-        policies: [], // add auth if needed
+        policies: [], // Add authentication if needed
       },
     },
   ],

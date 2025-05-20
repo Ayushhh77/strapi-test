@@ -17,45 +17,54 @@
     },
     "fullName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "emailAddress": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "writingPackage": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::writing-package.writing-package"
     },
     "writingUpgrades": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::writing-upgrade.writing-upgrade"
     },
     "publishingNetwork": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publishing-network.publishing-network"
     },
     "extraNewsOutlets": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-outlet.news-outlet"
     },
     "brandName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "country": {
-      "type": "string",
-      "required": true
+      "type": "customField",
+      "customField": "plugin::country-select.country",
+      "required": false
     },
     "websiteLinks": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "shared.link",
-      "required": true
+      "required": false
     },
     "representativeName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "representativeEmail": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "address": {
       "type": "text"
@@ -83,7 +92,7 @@
     },
     "newsStoryDoc": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "files"
@@ -91,7 +100,7 @@
     },
     "newsStoryImages": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
@@ -127,13 +136,21 @@
       "type": "date"
     },
     "orderReview": {
-     "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-review.order-review",
+      "mappedBy": "order"
     },
     "pressReleaseContent": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::press-release-content.press-release-content",
+      "mappedBy": "order"
     },
     "paymentMethod": {
-      "type": "string"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment-method.payment-method"
     }
   }
 }
