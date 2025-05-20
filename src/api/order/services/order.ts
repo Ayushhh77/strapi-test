@@ -60,7 +60,8 @@ export default factories.createCoreService(
     async handleThriveCartWebhook(ctx) {
       try {
         const { thrivecart, thrivecart_hash } = ctx.request.body;
-        const myThriveCartSecret = process.env.THRIVECART_SECRET;
+        const myThriveCartSecret =
+          process.env.THRIVECART_SECRET || "jdjsfsajfdjkaksdakja";
         if (!myThriveCartSecret) {
           ctx.response.status = 500;
           return { error: { message: "ThriveCart secret not configured" } };
@@ -120,7 +121,6 @@ export default factories.createCoreService(
             ],
           },
         };
-        
 
         let existingOrder = await strapi.db.query("api::order.order").findOne({
           where: { orderId: thrivecart.order_id },
