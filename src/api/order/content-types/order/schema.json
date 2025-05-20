@@ -1,0 +1,139 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order Bundle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderId": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "emailAddress": {
+      "type": "email",
+      "required": true
+    },
+    "writingPackage": {
+      "type": "string"
+    },
+    "writingUpgrades": {
+      "type": "string"
+    },
+    "publishingNetwork": {
+      "type": "string"
+    },
+    "extraNewsOutlets": {
+      "type": "string"
+    },
+    "brandName": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "websiteLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link",
+      "required": true
+    },
+    "representativeName": {
+      "type": "string",
+      "required": true
+    },
+    "representativeEmail": {
+      "type": "email",
+      "required": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "newsStoryTopicAndAngle": {
+      "type": "string"
+    },
+    "newsStoryDescription": {
+      "type": "richtext"
+    },
+    "newsStoryArticleGoal": {
+      "type": "text"
+    },
+    "newsStorySearchTerms": {
+      "type": "string"
+    },
+    "newsStoryQuotes": {
+      "type": "text"
+    },
+    "newsStoryYoutubeEmbedLink": {
+      "type": "string"
+    },
+    "newsStoryDoc": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "newsStoryImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "totalAmount": {
+      "type": "decimal"
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "placed",
+        "in_review",
+        "scheduled",
+        "cancelled",
+        "published"
+      ],
+      "default": "placed"
+    },
+    "stripePaymentId": {
+      "type": "text",
+      "required": false
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid"
+      ],
+      "default": "unpaid"
+    },
+    "publishingDate": {
+      "type": "date"
+    },
+    "orderReview": {
+     "type": "string"
+    },
+    "pressReleaseContent": {
+      "type": "string"
+    },
+    "paymentMethod": {
+      "type": "string"
+    }
+  }
+}
