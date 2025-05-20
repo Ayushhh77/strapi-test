@@ -5,14 +5,17 @@ export default (config: UserConfig) => {
     css: {
       postcss: {
         plugins: [
-          require('@tailwindcss/postcss'),
           require('autoprefixer'),
         ],
       },
     },
-    resolve: {
-      alias: {
-        '@': '/src',
+    build: {
+      target: 'esnext',
+      minify: 'esbuild',
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        target: 'esnext',
       },
     },
   });
